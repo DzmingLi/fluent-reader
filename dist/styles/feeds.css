@@ -16,9 +16,47 @@
     border-radius: 5px;
     overflow: hidden;
     animation-name: slideUp20;
+    position: relative;
 }
 .article-container .btn-group .btn {
     color: #fff;
+}
+
+/* Resize handles for article wrapper */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    cursor: ew-resize;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+.resize-handle:hover {
+    background-color: rgba(0, 120, 212, 0.1);
+}
+.resize-handle:active {
+    background-color: rgba(0, 120, 212, 0.2);
+}
+.resize-handle-left {
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.resize-handle-right {
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.resize-handle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .article-container .btn-group {
     position: absolute;
